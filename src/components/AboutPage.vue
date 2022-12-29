@@ -36,11 +36,6 @@
             ></a>
           </li>
           <li class="social-item">
-            <a class="social-link" target="_blank" href=""
-              ><i class="ti-twitter" aria-hidden="true"></i
-            ></a>
-          </li>
-          <li class="social-item">
             <a
               class="social-link"
               target="_blank"

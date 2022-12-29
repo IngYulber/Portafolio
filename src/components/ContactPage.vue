@@ -6,7 +6,7 @@
         <div class="col-lg-8">
           <div class="contact-form-card">
             <h4 class="contact-title">Send a message</h4>
-            <form action="" method="post">
+            <div>
               <div class="form-group">
                 <input
                   class="form-control"
@@ -35,11 +35,11 @@
                 ></textarea>
               </div>
               <div class="form-group">
-                <button type="submit" class="form-control btn btn-primary">
+                <button @click="sendMessage()" class="form-control btn btn-primary">
                   Send Message
                 </button>
               </div>
-            </form>
+            </div>
           </div>
         </div>
         <div class="col-lg-4">
@@ -88,11 +88,6 @@
                 ></a>
               </li>
               <li class="social-item">
-                <a class="social-link text-dark" href="#"
-                  ><i class="ti-twitter" aria-hidden="true"></i
-                ></a>
-              </li>
-              <li class="social-item">
                 <a
                   class="social-link text-dark"
                   target="_blank"
@@ -126,7 +121,13 @@
 
 <script>
 export default {
-    name:"ContactPage"
+    name:"ContactPage",
+
+    methods : {
+      sendMessage(){
+        alert("Mensaje enviado");
+      }
+    }
 }
 </script>
 
