@@ -12,9 +12,9 @@
           the conception of the initial architecture to its final
           implementation.
         </p>
-        <button class="btn btn-outline-danger" @click="downloadCV()">
+        <a download="CV-INGA.pdf" href="/document/cv.pdf" class="btn btn-outline-danger">
           <i class="icon-down-circled2"></i>Download My CV
-        </button>
+        </a>
       </div>
       <div class="col-lg-4 about-card">
         <h3 class="font-weight-light">Personal Info</h3>
@@ -64,33 +64,13 @@
       <div class="col-lg-4 about-card">
         <h3 class="font-weight-light">My Hobbies</h3>
         <span class="line mb-5"></span>
-        <div class="row">
+        <div class="row" v-for="(item, index) in myHobbies" v-bind:key="index">
           <div class="col-1 text-danger pt-1">
-            <i class="ti-archive icon-lg"></i>
+            <i :class="item.icon" class="icon-lg"></i>
           </div>
           <div class="col-10 ml-auto mr-3">
-            <h6>Web Scraping</h6>
-            <p class="subtitle">visit pages and collect information.</p>
-            <hr />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-1 text-danger pt-1">
-            <i class="ti-briefcase icon-lg"></i>
-          </div>
-          <div class="col-10 ml-auto mr-3">
-            <h6>Web Development</h6>
-            <p class="subtitle">make and development web apps.</p>
-            <hr />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-1 text-danger pt-1">
-            <i class="ti-hummer icon-lg"></i>
-          </div>
-          <div class="col-10 ml-auto mr-3">
-            <h6>Dataset</h6>
-            <p class="subtitle">fetch data and make dataset.</p>
+            <h6>{{item.title}}</h6>
+            <p class="subtitle">{{item.description}}</p>
             <hr />
           </div>
         </div>
@@ -102,9 +82,17 @@
 <script>
 export default {
   name: "AboutPage",
+  data(){
+    return {
+      myHobbies:[
+        {title:"Web Development", description:"make and development web apps.", icon:"ti-archive"},
+        {title:"Dataset", description:"fetch data and make dataset.", icon:"ti-bookmark"},
+        {title:"Web Scraping", description:"visit pages and collect information.", icon:"ti-search"},
+      ]
+    }
+  },
   methods: {
     downloadCV() {
-      window.open('../assets/document/cv.pdf', '_blank');
     },
   },
 };

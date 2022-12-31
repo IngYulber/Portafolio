@@ -1,5 +1,5 @@
 <template>
-    <section class="section" id="resume">
+  <section class="section" id="resume">
     <div class="container">
       <h2 class="mb-5"><span class="text-danger">My</span> Resume</h2>
       <div class="row">
@@ -12,35 +12,18 @@
               </div>
             </div>
             <div class="card-body">
-              <h6 class="title text-danger">Developer Full Stack</h6>
-              <P>
-                <b
-                  >E.T Santa Cruz de Huachipa | September 2022 - December
-                  2022</b
-                ></P
-              >
-              <ul>
-                <li>Develop and test new features</li>
-                <li>Role and permission management</li>
-                <li>Migration Development</li>
-                <li>Develop functional tests</li>
-              </ul>
-              <hr />
-              <h6 class="title text-danger">Developer Full Stack</h6>
-              <P> <b>Promolider ORG | March 2022 - August 2022</b></P>
-              <ul>
-                <li>Develop and test APIs</li>
-                <li>Develop and test new features</li>
-                <li>Integration of payment gateways</li>
-                <li>Role and permission management</li>
-                <li>Migration Development</li>
-                <li>Develop functional tests</li>
-              </ul>
-
-              <!-- <h6 class="title text-danger">2015 - 2016</h6>
-                            <P>UX Designer</P>
-                            <P class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum
-                                recusandae, cupiditate ullam dolor ratione repellendus.aliquid repudiandae saepe!.</P> -->
+              <div v-for="(item, index) in experiences" v-bind:key="index">
+                <h6 class="title text-danger">{{ item.position }}</h6>
+                <p>
+                  <b>{{ item.place }} | {{ item.duration }}</b>
+                </p>
+                <ul>
+                  <li v-for="funct in item.functions" v-bind:key="funct">
+                    {{ funct }}
+                  </li>
+                </ul>
+                <hr />
+              </div>
             </div>
           </div>
         </div>
@@ -179,10 +162,39 @@
 
 <script>
 export default {
-name:"ResumenPage"
-}
+  name: "ResumenPage",
+  data() {
+    return {
+      experiences: [
+        {
+          position: "Developer Full Stack",
+          place: "E.T Santa Cruz de Huachipa",
+          duration: "September 2022 - December 2022",
+          functions: [
+            "Develop and test new features",
+            "Role and permission management",
+            "Migration Development",
+            "Develop functional tests",
+          ],
+        },
+        {
+          position: "Developer Full Stack",
+          place: "Promolider ORG",
+          duration: "March 2022 - August 2022",
+          functions: [
+            "Develop and test APIs",
+            "Develop and test new features",
+            "Integration of payment gateways",
+            "Role and permission management",
+            "Migration Development",
+            "Develop functional tests",
+          ],
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style>
-
 </style>
