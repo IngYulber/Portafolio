@@ -39,9 +39,9 @@
         <h4 class="header-subtitle">Hello, I am</h4>
         <h1 class="header-title">John Inga</h1>
         <h6 class="header-mono">Full Stack Developer</h6>
-        <button class="btn btn-primary btn-rounded">
+        <!-- <button class="btn btn-primary btn-rounded">
           <i class="ti-printer pr-2"></i>Print Resume
-        </button>
+        </button> -->
       </div>
     </div>
   </header>

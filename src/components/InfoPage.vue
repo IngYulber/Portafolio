@@ -1,5 +1,5 @@
 <template>
-   <section class="section bg-dark text-center">
+  <section class="section bg-dark text-center">
     <div class="container">
       <div class="row text-center">
         <div class="col-md-6 col-lg-3">
@@ -53,10 +53,14 @@
 
 <script>
 export default {
-    name:"InfoPage"
-}
+  name: "InfoPage",
+  data(){
+    return {
+      
+    }
+  }
+};
 </script>
 
 <style>
-
 </style>

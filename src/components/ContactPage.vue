@@ -6,7 +6,10 @@
         <div class="col-lg-8">
           <div class="contact-form-card">
             <h4 class="contact-title">Send a message</h4>
-            <div>
+            <form
+              action="https://formsubmit.co/3568b8df9a23c5a35360edaabb59e730 "
+              method="POST"
+            >
               <div class="form-group">
                 <input
                   class="form-control"
@@ -35,11 +38,15 @@
                 ></textarea>
               </div>
               <div class="form-group">
-                <button @click="sendMessage()" class="form-control btn btn-primary">
-                  Send Message
-                </button>
+                <input
+                  type="submit"
+                  value="Send Message"
+                  class="form-control btn btn-primary"
+                />
               </div>
-            </div>
+
+              <input type="hidden" name="_captcha" value="false" />
+            </form>
           </div>
         </div>
         <div class="col-lg-4">
@@ -121,16 +128,19 @@
 
 <script>
 export default {
-    name:"ContactPage",
-
-    methods : {
-      sendMessage(){
-        alert("Mensaje enviado");
-      }
-    }
-}
+  name: "ContactPage",
+  data() {
+    return {
+      baseUrl: window.location.origin,
+    };
+  },
+  methods: {
+    sendMessage() {
+      alert("Mensaje enviado");
+    },
+  },
+};
 </script>
 
 <style>
-
 </style>
