@@ -55,7 +55,7 @@
             <a
               class="social-link"
               target="_blank"
-              href="https://github.com/yulbex"
+              :href="LINK_GITHUB"
               ><i class="ti-github" aria-hidden="true"></i
             ></a>
           </li>
@@ -88,7 +88,8 @@ export default {
         {title:"Web Development", description:"make and development web apps.", icon:"ti-archive"},
         {title:"Dataset", description:"fetch data and make dataset.", icon:"ti-bookmark"},
         {title:"Web Scraping", description:"visit pages and collect information.", icon:"ti-search"},
-      ]
+      ],
+      LINK_GITHUB: process.env.VUE_APP_LINK_GITHUB,
     }
   },
   methods: {

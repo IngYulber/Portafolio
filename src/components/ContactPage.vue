@@ -7,7 +7,7 @@
           <div class="contact-form-card">
             <h4 class="contact-title">Send a message</h4>
             <form
-              action="https://formsubmit.co/3568b8df9a23c5a35360edaabb59e730 "
+              :action="'https://formsubmit.co/' + EMAIL_TOKEN"
               method="POST"
             >
               <div class="form-group">
@@ -114,7 +114,7 @@
                 <a
                   class="social-link text-dark"
                   target="_blank"
-                  href="https://github.com/yulbex"
+                  :href="LINK_GITHUB"
                   ><i class="ti-github" aria-hidden="true"></i
                 ></a>
               </li>
@@ -131,14 +131,13 @@ export default {
   name: "ContactPage",
   data() {
     return {
-      baseUrl: window.location.origin,
+      EMAIL_TOKEN: process.env.VUE_APP_EMAIL_TOKEN,
+      LINK_GITHUB: process.env.VUE_APP_LINK_GITHUB,
+
     };
   },
-  methods: {
-    sendMessage() {
-      alert("Mensaje enviado");
-    },
-  },
+  methods: {},
+  mounted() {},
 };
 </script>
 

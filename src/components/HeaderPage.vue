@@ -30,7 +30,7 @@
           <a
             class="social-link text-light"
             target="_blank"
-            href="https://github.com/yulbex"
+            :href="LINK_GITHUB"
             ><i class="ti-github" aria-hidden="true"></i
           ></a>
         </li>
@@ -49,7 +49,12 @@
 
 <script>
 export default {
-    name: 'HeaderPage'
+    name: 'HeaderPage',
+    data(){
+      return {
+        LINK_GITHUB: process.env.VUE_APP_LINK_GITHUB,
+      }
+    }
 };
 </script>
 
