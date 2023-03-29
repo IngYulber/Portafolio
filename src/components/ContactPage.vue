@@ -59,7 +59,7 @@
               <div class="col-10">
                 <h6 class="d-inline">
                   Phone : <br />
-                  <span class="text-muted">+ (51) 912719166</span>
+                  <span class="text-muted">+ (51) 904218593</span>
                 </h6>
               </div>
             </div>
